@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.0.3",
-    "react": "19.0.0",
-    "react-dom": "19.0.0",
+    "next": "15.5.7",
+    "react": "19.1.2",
+    "react-dom": "19.1.2",
     "dexie": "4.0.8",
     "dexie-react-hooks": "1.1.7",
     "recharts": "2.13.3",
@@ -24,13 +24,13 @@
   "devDependencies": {
     "typescript": "5.6.3",
     "@types/node": "20.16.11",
-    "@types/react": "19.0.1",
-    "@types/react-dom": "19.0.1",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
     "@types/uuid": "9.0.8",
     "tailwindcss": "3.4.14",
     "postcss": "8.4.47",
     "autoprefixer": "10.4.20",
     "eslint": "8.57.1",
-    "eslint-config-next": "15.0.3"
+    "eslint-config-next": "15.5.7"
   }
 }
