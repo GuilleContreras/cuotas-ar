@@ -5,7 +5,7 @@ import { AreaChart, Area, ResponsiveContainer, XAxis, Tooltip } from "recharts";
 import { useCards } from "@/hooks/useCards";
 import { useAllInstallments } from "@/hooks/useInstallments";
 import { Card, CardContent } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
+
 import { formatCurrency, formatDateLong, capitalize } from "@/lib/format";
 import { monthlyProjection, nextStatementsByCard, totalFutureCommitted, ymToLabel } from "@/lib/installments";
 import { BRAND_LABELS } from "@/lib/types";
@@ -178,12 +178,4 @@ function EmptyState() {
   );
 }
 
-export function DashboardSkeleton() {
-  return (
-    <div className="flex flex-col gap-3 pt-6">
-      <Skeleton className="h-24 w-full" />
-      <Skeleton className="h-40 w-full" />
-      <Skeleton className="h-16 w-full" />
-    </div>
-  );
-}
+
