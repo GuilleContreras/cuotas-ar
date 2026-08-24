@@ -7,13 +7,13 @@ export function formatCurrency(value: number): string {
 }
 
 export function formatDateShort(iso: string): string {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y, m, d] = iso.split("-").map(Number) as [number, number, number];
   const date = new Date(y, m - 1, d);
   return date.toLocaleDateString("es-AR", { day: "2-digit", month: "short" });
 }
 
 export function formatDateLong(iso: string): string {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y, m, d] = iso.split("-").map(Number) as [number, number, number];
   const date = new Date(y, m - 1, d);
   return date.toLocaleDateString("es-AR", { day: "2-digit", month: "long", year: "numeric" });
 }

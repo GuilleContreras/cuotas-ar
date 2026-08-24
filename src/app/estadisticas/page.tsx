@@ -57,7 +57,7 @@ export default function EstadisticasPage() {
   }));
 
   // Evolución mensual: 6 meses atrás a 11 meses adelante
-  const [y, m] = todayISO().split("-").map(Number);
+  const [y, m] = todayISO().split("-").map(Number) as [number, number];
   const startYm = `${y}-${String(m).padStart(2, "0")}`;
   const past = monthlyProjectionRange(installments, startYm, -6, 6);
   const future = monthlyProjection(installments, 12);
@@ -239,7 +239,7 @@ function monthlyProjectionRange(
 ) {
   const buckets: { ym: string; total: number }[] = [];
   for (let i = fromOffset; i <= toOffset; i++) {
-    const [y, m] = startYm.split("-").map(Number);
+    const [y, m] = startYm.split("-").map(Number) as [number, number];
     const date = new Date(y, m - 1 + i, 1);
     const ym = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
     buckets.push({ ym, total: 0 });

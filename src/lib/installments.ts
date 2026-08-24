@@ -11,7 +11,7 @@ interface YMD {
 }
 
 function parseISODate(iso: string): YMD {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y, m, d] = iso.split("-").map(Number) as [number, number, number];
   return { year: y, month: m - 1, day: d };
 }
 
@@ -53,12 +53,12 @@ function ymKey(year: number, month: number): string {
 }
 
 export function addMonthsToYM(ym: string, n: number): string {
-  const [y, m] = ym.split("-").map(Number);
+  const [y, m] = ym.split("-").map(Number) as [number, number];
   return ymKey(y, m - 1 + n);
 }
 
 export function ymToLabel(ym: string): string {
-  const [y, m] = ym.split("-").map(Number);
+  const [y, m] = ym.split("-").map(Number) as [number, number];
   const date = new Date(y, m - 1, 1);
   return date.toLocaleDateString("es-AR", { month: "long", year: "numeric" });
 }
@@ -68,7 +68,7 @@ export function ymToLabel(ym: string): string {
  * devuelve la fecha de vencimiento real de ese resumen (ISO).
  */
 export function dueDateForStatementMonth(statementMonth: string, dueDay: number): string {
-  const [y, m] = statementMonth.split("-").map(Number);
+  const [y, m] = statementMonth.split("-").map(Number) as [number, number];
   return toISO(y, m - 1, dueDay);
 }
 
@@ -206,7 +206,7 @@ export function totalFutureCommitted(installments: Installment[], today: string 
 
 /** Serie de próximos N meses con el total a pagar (todas las tarjetas sumadas). */
 export function monthlyProjection(installments: Installment[], months: number, today: string = todayISO()) {
-  const [y, m] = today.split("-").map(Number);
+  const [y, m] = today.split("-").map(Number) as [number, number];
   const startYM = ymKey(y, m - 1);
   const buckets: { ym: string; total: number }[] = [];
   for (let i = 0; i < months; i++) {

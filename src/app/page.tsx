@@ -5,7 +5,6 @@ import { AreaChart, Area, ResponsiveContainer, XAxis, Tooltip } from "recharts";
 import { useCards } from "@/hooks/useCards";
 import { useAllInstallments } from "@/hooks/useInstallments";
 import { Card, CardContent } from "@/components/ui/card";
-
 import { formatCurrency, formatDateLong, capitalize } from "@/lib/format";
 import { monthlyProjection, nextStatementsByCard, totalFutureCommitted, ymToLabel } from "@/lib/installments";
 import { BRAND_LABELS } from "@/lib/types";
@@ -177,5 +176,3 @@ function EmptyState() {
     </div>
   );
 }
-
-
